@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.mapper.GoodsMapper">
+	<select id="goodsFindData" resultType="GoodsVO" parameterType="hashmap">
+		SELECT no, goods_name, goods_price, goods_first_price, goods_delivery
+		FROM goods_all
+		WHERE ${goods_name} LIKE '%'||#{ss2}||'%'
+	</select>
+</mapper>
